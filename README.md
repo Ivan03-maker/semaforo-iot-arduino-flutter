@@ -25,15 +25,22 @@ Proyecto académico e integrador que combina el desarrollo de software de escrit
 
 ---
 
-## ⚙️ Instrucciones de Ejecución
+## ⚙️ Instrucciones de Ejecución y Configuración
 
-### 1. Cargar el Código en el Microcontrolador
+### 1. Requisitos Previos en Windows (Obligatorio para Escritorio)
+Dado que la aplicación de Flutter interactúa a bajo nivel con el puerto USB mediante plugins nativos (`flutter_libserialport`), asegúrate de cumplir con lo siguiente antes de compilar:
+1. **Modo de Desarrollador:** Habilita el *Modo de desarrollador* en la configuración de Windows (Configuración > Privacidad y seguridad / Para desarrolladores > Activar).
+2. **Herramientas de C++:** Tener instalado **Visual Studio** con la carga de trabajo *Desarrollo para el escritorio con C++* (necesario para la toolchain de compilación de Windows).
+
+### 2. Cargar el Código en el Microcontrolador
 1. Abre el archivo en C++ en el **Arduino IDE**.
 2. Conecta tu placa Elegoo UNO R3 por USB a la computadora.
 3. Selecciona tu placa (`Arduino Uno`) y el puerto COM correspondiente en **Herramientas > Puerto**.
 4. Sube el código a la placa.
 
-### 2. Ejecutar el Centro de Control en Flutter
-1. Asegúrate de tener habilitado el *Modo de Desarrollador* en Windows (necesario para plugins de bajo nivel).
-2. Abre la terminal en la carpeta del proyecto Flutter.
-3. Ejecuta el comando de dependencias:
+### 3. Ejecutar el Centro de Control en Flutter
+1. Asegúrate de abrir el proyecto directamente en una ruta de la unidad `C:` de tu PC (para evitar conflictos de enlaces simbólicos en Windows).
+2. Abre la terminal integrada en la carpeta del proyecto Flutter.
+3. Ejecuta el comando para descargar las dependencias:
+   ```bash
+   flutter pub get
